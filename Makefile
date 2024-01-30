@@ -6,7 +6,7 @@
 #    By: falberti <falberti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/18 16:30:56 by falberti          #+#    #+#              #
-#    Updated: 2024/01/29 14:37:32 by falberti         ###   ########.fr        #
+#    Updated: 2024/01/30 14:52:21 by falberti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OFILES = $(addsuffix .o, $(FILES))
 ####################################################################
 ## Varguments
 CC = gcc
-CFLAGS = -Werror -Wextra -Wall -Imlx -I $(HEADER)
+CFLAGS = -Werror -Wextra -Wall -I $(HEADER) -Imlx 
 NAME = so_long
 
 #####################################################################
