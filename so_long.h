@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:30:09 by falberti          #+#    #+#             */
-/*   Updated: 2024/01/30 18:09:50 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/12 14:29:32 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,21 @@ typedef struct s_mlx_data {
 	int		color;
 
 }				t_mlx_data;
+
+typedef struct s_img
+{
+	void	*img_ptr;
+	char	*img_pixels_ptr;
+	int		bit_per_pixel;
+	int		endian;
+	int		line_len;
+}				t_img;
+
+typedef struct s_var
+{
+	void		*mlx_ptr;
+	void		*win_ptr;
+	t_img		img;
+}				t_var;
 
 #endif
