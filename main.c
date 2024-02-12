@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
+/*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:28:35 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/03 16:33:51 by albertini        ###   ########.fr       */
+/*   Updated: 2024/02/12 14:21:48 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	handle_input(int keysym, t_mlx_data *data)
 	{
 		printf("The %d key (ESC) has been pressed\n", keysym);
 		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
-		//mlx_destroy_image(data->mlx_ptr, data->win_ptr);
 		free(data->mlx_ptr);
 		exit (1);
 	}
@@ -29,43 +28,50 @@ int	handle_input(int keysym, t_mlx_data *data)
 
 void	color_screen(t_mlx_data *data, int color)
 {
-    int x;
-    int y;
+	int	x;
+	int	y;
 
-    x = 0;
-    while (x < 800)
-    {
-    y = 0; 
-	while (y < 800)
-    {
-        mlx_pixel_put(data->mlx_ptr, data->win_ptr, x, y, color);
-        y++;
-    }
-        x++;
-    }
+	x = 0;
+	while (x < 800)
+	{
+	y = 0;
+		while (y < 800)
+		{
+			mlx_pixel_put(data->mlx_ptr, data->win_ptr, x, y, color);
+			y++;
+		}
+		x++;
+	}
 }
 
-int encode_rgb(unsigned char red, unsigned char green, unsigned char blue)
+int	encode_rgb(unsigned char red, unsigned char green, unsigned char blue)
 {
-    return (red << 16 | green << 8 | blue);
+	return (red << 16 | green << 8 | blue);
 }
-
 
 int	change_bg(int keysum, t_mlx_data *data)
 {
+	if (keysum == KEYCODE_ESC)
+	{
+		printf("The %d key (ESC) has been pressed\n", keysum);
+		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+		free(data->mlx_ptr);
+		exit (1);
+	}
 	if (keysum == KEYCODE_R)
 		color_screen(data, encode_rgb(255, 0, 0));
-    else if (keysum == KEYCODE_G)
-        color_screen(data, encode_rgb(0, 255, 0));
-    else if (keysum == KEYCODE_B)
-        color_screen(data, encode_rgb(0, 0, 255));
+	else if (keysum == KEYCODE_G)
+		color_screen(data, encode_rgb(0, 255, 0));
+	else if (keysum == KEYCODE_B)
+		color_screen(data, encode_rgb(0, 0, 255));
 	return (0);
 }
 
 int	change_color(t_mlx_data *data)
 {
-	mlx_string_put(data->mlx_ptr, data->win_ptr, 150, 150, data->color, "Changing color");
-	if(data->color == 0xFF0000)
+	mlx_string_put(data->mlx_ptr, data->win_ptr, 150, 150,
+		data->color, "Changing color");
+	if (data->color == 0xFF0000)
 		data->color = 0x0FF000;
 	else if (data->color == 0x0FF000)
 		data->color = 0x0000FF;
