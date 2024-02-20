@@ -6,11 +6,14 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:28:35 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/20 16:05:24 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/20 16:53:19 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+
+int	nb_move = 0;
 
 int	main(void)
 {

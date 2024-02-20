@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:30:09 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/20 16:08:55 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/20 16:44:55 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 # include <limits.h>
 # include "hook.h"
 # include "mlx.h"
+
+// Definition of the global variable
+extern int nb_moves;
 
 typedef struct s_data {
 	void	*img;
