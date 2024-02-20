@@ -1,5 +1,8 @@
 {
 	"files.associations": {
-		"so_long.h": "c"
-	}
+		"so_long.h": "c",
+		"hook.h": "c",
+		"limits.h": "c"
+	},
+	"C_Cpp.default.compilerPath": "/usr/bin/gcc"
 }

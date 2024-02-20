@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:30:09 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/12 14:29:32 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/20 16:08:55 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,8 @@ typedef struct s_var
 	void		*win_ptr;
 	t_img		img;
 }				t_var;
+
+void				commands(t_var *data);
+void				color_screen(t_var *data, int color);
 
 #endif
