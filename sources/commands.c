@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   commands.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:40:43 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/20 16:50:52 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:53:30 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static int	quitgame(int keycode, t_var *vars)
 	return (1);
 }
 
-static int	close_cross(t_mlx_data *data)
+static int	close_cross(t_var *data)
 {
 	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 	free(data->mlx_ptr);
