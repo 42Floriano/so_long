@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
+/*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:30:09 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/22 17:19:30 by albertini        ###   ########.fr       */
+/*   Updated: 2024/02/23 16:35:06 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@
 # include <stdio.h>
 # include <stdbool.h>
 # include <limits.h>
+# include <fcntl.h>
 # include "hook.h"
 # include "mlx.h"
-# include <fcntl.h>
-
-// Definition of the global variable
-extern int nb_moves;
+# include "libftmini/libft.h"
 
 // Definition of the structure
 typedef struct s_img
@@ -35,7 +33,7 @@ typedef struct s_img
 	int		line_len;
 }				t_img;
 
-typedef struct s_var
+typedef struct s_game
 {
 	void		*mlx_ptr;
 	void		*win_ptr;
@@ -43,13 +41,15 @@ typedef struct s_var
 	int			player_x;
 	int			player_y;
 	int			player_score;
+	int			player_moves;
 	int			nb_eatable;
 	bool 		exit;
 	t_img		img;
-}				t_var;
+}				t_game;
 
-void				commands(t_var *data);
-void				color_screen(t_var *data, int color);
+void				commands(t_game *data);
+void				color_screen(t_game *data, int color);
 char				**readmap(char *filename);
+int					playermove(int keycode, t_game *vars);
 
 #endif

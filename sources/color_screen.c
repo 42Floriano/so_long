@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   color_screen.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
+/*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:04:46 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/22 16:41:59 by albertini        ###   ########.fr       */
+/*   Updated: 2024/02/23 15:40:46 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	my_mlx_pixel_put(t_img *img, int x, int y, int color)
 	*((unsigned int *)(offset + img->img_pixels_ptr)) = color;
 }
 
-void	color_screen(t_var *data, int color)
+void	color_screen(t_game *data, int color)
 {
 	int	x;
 	int	y;

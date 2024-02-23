@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_map.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 16:10:49 by albertini         #+#    #+#             */
-/*   Updated: 2024/02/23 15:41:36 by falberti         ###   ########.fr       */
+/*   Created: 2023/10/17 13:32:44 by falberti          #+#    #+#             */
+/*   Updated: 2024/02/23 16:27:23 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "libft.h"
 
-char	**readmap(char *filename)
+char	*ft_strdup(const char *s1)
 {
-	int		fd;
-	char	*buf;
-	char	*line;
-	char	**map;
+	char	*strr;
+	int		size;
+	int		i;
 
-	fd = open(filename, O_RDONLY);
-	if (fd < 0)
-		return (NULL);
-	while (1)
+	size = ft_strlen(s1);
+	strr = malloc((size +1) * sizeof(char));
+	if (!strr)
+		return (strr);
+	i = 0;
+	while (s1[i])
 	{
-		buf = get_next_line(fd);
-		if (buf == NULL)
-			break ;
-		line = ft_strjoin(line, buf);
-		free(buf);
+		strr[i] = s1[i];
+		i++;
 	}
-	map = ft_split(line, '\n');
-	free(line);
-	return (map);
+	strr[i] = '\0';
+	if (strr == NULL)
+		return (strr);
+	return (strr);
 }
+

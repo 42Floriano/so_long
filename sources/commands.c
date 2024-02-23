@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   commands.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
+/*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:40:43 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/22 16:53:30 by albertini        ###   ########.fr       */
+/*   Updated: 2024/02/23 15:40:27 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
 // 	return (0);
 // }
 
-static int	playermove(int keycode, t_var *vars)
+static int	press_direction(int keycode, t_game *vars)
 {
 	if (keycode == KEYCODE_RIGHT_ARROW || keycode == KEYCODE_D)
 		playermove(1, vars);
@@ -51,7 +51,7 @@ static int	playermove(int keycode, t_var *vars)
 	return (0);
 }
 
-static int	quitgame(int keycode, t_var *vars)
+static int	quitgame(int keycode, t_game *vars)
 {
 	if (keycode == KEYCODE_ESC)
 	{
@@ -63,7 +63,7 @@ static int	quitgame(int keycode, t_var *vars)
 	return (1);
 }
 
-static int	close_cross(t_var *data)
+static int	close_cross(t_game *data)
 {
 	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 	free(data->mlx_ptr);
@@ -71,10 +71,10 @@ static int	close_cross(t_var *data)
 	return (1);
 }
 
-void	commands(t_var *data)
+void	commands(t_game *data)
 {
 	//mlx_key_hook(data->win_ptr, change_bg, data);
-	mlx_hook(data->win_ptr, 2, 0, playermove, data);
+	mlx_hook(data->win_ptr, 2, 0, press_direction, data);
 	mlx_hook(data->win_ptr, 17, 0, close_cross, data);
 	mlx_hook(data->win_ptr, 3, 0, quitgame, data);
 }

@@ -2,7 +2,8 @@
 	"files.associations": {
 		"so_long.h": "c",
 		"hook.h": "c",
-		"limits.h": "c"
+		"limits.h": "c",
+		"iterator": "c"
 	},
 	"C_Cpp.default.compilerPath": "/usr/bin/gcc"
 }
