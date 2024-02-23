@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:30:09 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/23 16:35:06 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/23 16:53:44 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ void				commands(t_game *data);
 void				color_screen(t_game *data, int color);
 char				**readmap(char *filename);
 int					playermove(int keycode, t_game *vars);
+int					map_checkers(char **map);
 
 #endif

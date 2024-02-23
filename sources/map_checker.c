@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_map.c                                         :+:      :+:    :+:   */
+/*   map_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 16:10:49 by albertini         #+#    #+#             */
-/*   Updated: 2024/02/23 16:41:06 by falberti         ###   ########.fr       */
+/*   Created: 2024/02/23 16:43:15 by falberti          #+#    #+#             */
+/*   Updated: 2024/02/23 16:53:26 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-char	**readmap(char *filename)
+static int	is_rectangle_and_nempty()
 {
-	int		fd;
-	char	*buf;
-	char	*line;
-	char	**map;
+	return (0);	
+}
 
-	fd = open(filename, O_RDONLY);
-	if (fd < 0)
-		return (NULL);
-	while (1)
-	{
-		buf = get_next_line(fd);
-		if (buf == NULL)
-			break ;
-		line = ft_strjoin(line, buf);
-		free(buf);
-	}
-	map = ft_split(line, '\n');
-	free(line);
-	return (map);
+static int	closed_by_walls(char **map)
+{
+	return (0);
+}
+
+static int	is_there_epc(char **map)
+{
+	return (0);
+}
+
+int	map_checkers(char **map)
+{
+	if (1)
+		return (1)
+	return (0);
 }
