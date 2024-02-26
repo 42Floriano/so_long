@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 16:43:15 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/23 18:46:37 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/26 13:50:50 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,44 +60,40 @@ static int	closed_by_walls(char **map)
 	return (1);
 }
 
-static int	is_there_epc(char **map)
+static int	is_there_epc(t_game *game)
 {
 	int	y;
 	int	x;
-	int	e;
-	int	p;
-	int	c;
 
 	y = 0;
 	x = 0;
-	e = 0;
-	p = 0;
-	c = 0;
-	while (map[y])
+	while (game->map[y])
 	{
-		while (map[y][x])
+		while (game->map[y][x])
 		{
-			if (map[y][x] == 'E')
-				e++;
-			if (map[y][x] == 'P')
-				p++;
-			if (map[y][x] == 'C')
-				c++;
+			if (game->map[y][x] == 'E')
+				game->exit_portal++;
+			if (game->map[y][x] == 'P')
+				game->entry_portal++;
+			if (game->map[y][x] == 'C')
+				game->nb_eatable++;
 			x++;
 		}
 		y++;
 	}
-	if (e != 1 || p != 1 || c <= 0)
+	if (game->exit_portal != 1
+		|| game->entry_portal != 1
+		|| game->nb_eatable <= 0)
 		return (0);
 	return (1);
 }
 
 // must be changed with game instead
-int	map_checkers(char **map)
+int	map_checkers(t_game *game)
 {
-	if (!is_rectangle_and_nempty(map)
-		|| !closed_by_walls(map)
-		|| !is_there_epc(map))
+	if (!is_rectangle_and_nempty(game->map)
+		|| !closed_by_walls(game->map)
+		|| !is_there_epc(game))
 		return (0);
 	return (1);
 }
