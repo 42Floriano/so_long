@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:30:09 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/26 13:54:06 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/27 15:51:45 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ typedef struct s_game
 	int			exit_portal;
 	int			entry_portal;
 	int			nb_eatable;
+	int			max_y;
+	int			max_x;
+	int			exit_checker;
+	int			eat_checker;
 	bool 		exit_ok;
 	t_img		img;
 }				t_game;
@@ -54,5 +58,7 @@ void				color_screen(t_game *data, int color);
 char				**readmap(char *filename);
 int					playermove(int keycode, t_game *vars);
 int					map_checkers(t_game *game);
+int					is_map_valid(t_game *game);
+void				free_map(char **map);
 
 #endif

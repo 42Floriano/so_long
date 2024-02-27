@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit_free_game.c                                   :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 14:47:15 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/27 15:55:12 by falberti         ###   ########.fr       */
+/*   Created: 2023/10/10 12:32:40 by falberti          #+#    #+#             */
+/*   Updated: 2023/10/30 12:39:58 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "libft.h"
 
-void	free_map(char **map)
+void	*ft_memset(void *str, int c, unsigned int l)
 {
-	int	i;
+	unsigned char	*t;
 
-	i = 0;
-	while (map[i])
+	t = str;
+	while (l > 0)
 	{
-		free(map[i]);
+		*t = c;
+		t++;
+		l--;
+	}
+	return (str);
+}
+
+/*int	main(void)
+{
+	char test[10];
+
+	ft_memset(test, 'a', 5);
+	
+	int i = 0;
+	while (i < 5)
+	{
+		printf("%c", test[i]);
 		i++;
 	}
-	free(map);
-}
-
-void	exit_game(t_game *game)
-{
-	free_map(game->map);
-}
+	return (0);
+}*/

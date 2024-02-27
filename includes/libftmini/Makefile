@@ -4,6 +4,7 @@ FILES = ft_split\
             ft_strlen\
             get_next_line\
             get_next_line_utils\
+			ft_memset\
 
 			
 CFILES = $(FILES:%=%.c)

@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 10:38:32 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/23 16:32:37 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/27 14:01:30 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ char		*ft_strdup(const char *s1);
 int			ft_strlen(const char *str);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		**ft_split(char const *s, char c);
-
+void		*ft_memset(void *str, int c, unsigned int l);
 
 #endif
