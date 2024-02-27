@@ -6,7 +6,7 @@
 #    By: falberti <falberti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/18 16:30:56 by falberti          #+#    #+#              #
-#    Updated: 2024/02/23 16:37:13 by falberti         ###   ########.fr        #
+#    Updated: 2024/02/27 12:45:21 by falberti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,12 @@ lIBRARIES_DIR	=	libraries
 
 HEADER = $(lIBRARIES_DIR)/so_long.h
 
-FILES = $(SOURCES_DIR)/init\
+FILES = $(SOURCES_DIR)/main\
 				$(SOURCES_DIR)/commands\
 				$(SOURCES_DIR)/color_screen\
 				$(SOURCES_DIR)/player_update\
+				$(SOURCES_DIR)/map_checker\
+				$(SOURCES_DIR)/read_map\
 
 ## This is a bit tricky for me but it ask to check the end of the string in FILES than add .c if there is nothing
 ## Also possible to just liste the .c and .o files
@@ -29,7 +31,7 @@ OFILES = $(addsuffix .o, $(FILES))
 ####################################################################
 ## Varguments
 CC = gcc
-CFLAGS = -Werror -Wextra -Wall -I $(HEADER) -Imlx 
+CFLAGS = -Werror -Wextra -Wall -I $(HEADER) -Imlx -g
 NAME = so_long
 
 #####################################################################

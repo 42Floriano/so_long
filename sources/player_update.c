@@ -6,12 +6,11 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:26:24 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/23 15:39:24 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/26 13:52:48 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
 
 static	int	move_is_possible(t_game *vars, int x, int y)
 {

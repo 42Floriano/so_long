@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 16:43:15 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/26 13:50:50 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/27 12:44:01 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	is_rectangle_and_nempty(char **map)
 	y = 0;
 	x = 0;
 	while (map[y++])
-		if (strlen(map[y]) == strlen(map[0]))
+		if (ft_strlen(map[y]) == ft_strlen(map[0]))
 			return (0);
 	return (1 * ok);
 }
@@ -49,7 +49,7 @@ static int	closed_by_walls(char **map)
 	while (map[y])
 		y++;
 	while (map[0][x])
-		if (map[0][x] != '1' && map[y - 1] != '1')
+		if (map[0][x] != '1' && map[y - 1][x] != '1')
 			return (0);
 		x++;
 	y = 0;

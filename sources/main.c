@@ -6,12 +6,11 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:28:35 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/23 15:56:56 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/27 12:36:47 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
 
 int	main(void)
 {
@@ -32,6 +31,8 @@ int	main(void)
 		free(game.mlx_ptr);
 		return (1);
 	}
+	readmap("../assets/maps/exemple_one.ber");
+	map_checkers(&game);
 	commands(&game);
 	mlx_loop(game.mlx_ptr);
 	mlx_destroy_window(game.mlx_ptr, game.win_ptr);
