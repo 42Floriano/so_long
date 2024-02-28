@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:30:09 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/27 15:51:45 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/28 12:26:19 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ typedef struct s_game
 	int			nb_eatable;
 	int			max_y;
 	int			max_x;
+	int			y;
+	int			x;
 	int			exit_checker;
 	int			eat_checker;
 	bool 		exit_ok;
