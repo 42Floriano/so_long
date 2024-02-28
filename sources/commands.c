@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:40:43 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/23 15:40:27 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/28 13:12:07 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,43 +38,43 @@
 // 	return (0);
 // }
 
-static int	press_direction(int keycode, t_game *vars)
+static int	press_direction(int keycode, t_game *game)
 {
 	if (keycode == KEYCODE_RIGHT_ARROW || keycode == KEYCODE_D)
-		playermove(1, vars);
+		playermove(1, game);
 	else if (keycode == KEYCODE_LEFT_ARROW || keycode == KEYCODE_A)
-		playermove(2, vars);
+		playermove(2, game);
 	else if (keycode == KEYCODE_UP_ARROW || keycode == KEYCODE_W)
-		playermove(3, vars);
+		playermove(3, game);
 	else if (keycode == KEYCODE_DOWN_ARROW || keycode == KEYCODE_S)
-		playermove(4, vars);
+		playermove(4, game);
 	return (0);
 }
 
-static int	quitgame(int keycode, t_game *vars)
+static int	quitgame(int keycode, t_game *game)
 {
 	if (keycode == KEYCODE_ESC)
 	{
 		printf("The %d key (ESC) has been pressed\n", keycode);
-		mlx_destroy_window(vars->mlx_ptr, vars->win_ptr);
-		free(vars->mlx_ptr);
-		exit (1);
+		mlx_destroy_window(game->mlx_ptr, game->win_ptr);
+		free(game->mlx_ptr);
+		exit_game(game);
 	}
 	return (1);
 }
 
-static int	close_cross(t_game *data)
+static int	close_cross(t_game *game)
 {
-	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
-	free(data->mlx_ptr);
-	exit (1);
+	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
+	free(game->mlx_ptr);
+	exit_game(game);
 	return (1);
 }
 
-void	commands(t_game *data)
+void	commands(t_game *game)
 {
 	//mlx_key_hook(data->win_ptr, change_bg, data);
-	mlx_hook(data->win_ptr, 2, 0, press_direction, data);
-	mlx_hook(data->win_ptr, 17, 0, close_cross, data);
-	mlx_hook(data->win_ptr, 3, 0, quitgame, data);
+	mlx_hook(game->win_ptr, 2, 0, press_direction, game);
+	mlx_hook(game->win_ptr, 17, 0, close_cross, game);
+	mlx_hook(game->win_ptr, 3, 0, quitgame, game);
 }

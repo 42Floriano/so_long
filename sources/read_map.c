@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 16:10:49 by albertini         #+#    #+#             */
-/*   Updated: 2024/02/23 16:41:06 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/28 14:10:18 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ char	**readmap(char *filename)
 	char	**map;
 
 	fd = open(filename, O_RDONLY);
+	line = "";
 	if (fd < 0)
 		return (NULL);
 	while (1)
@@ -30,6 +31,7 @@ char	**readmap(char *filename)
 		line = ft_strjoin(line, buf);
 		free(buf);
 	}
+	printf("Test:\n%s\n", line);
 	map = ft_split(line, '\n');
 	free(line);
 	return (map);

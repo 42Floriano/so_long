@@ -6,7 +6,7 @@
 #    By: falberti <falberti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/18 16:30:56 by falberti          #+#    #+#              #
-#    Updated: 2024/02/27 15:52:15 by falberti         ###   ########.fr        #
+#    Updated: 2024/02/28 14:06:29 by falberti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ FILES = $(SOURCES_DIR)/main\
 				$(SOURCES_DIR)/read_map\
 				$(SOURCES_DIR)/path_checker\
 				$(SOURCES_DIR)/exit_free_game\
+				$(SOURCES_DIR)/init_game\
 
 ## This is a bit tricky for me but it ask to check the end of the string in FILES than add .c if there is nothing
 ## Also possible to just liste the .c and .o files

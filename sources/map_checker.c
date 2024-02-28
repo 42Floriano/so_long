@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 16:43:15 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/28 12:29:57 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/28 14:25:03 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,24 @@ static int	is_rectangle_and_nempty(char **map)
 	int	ok;
 
 	y = 0;
-	x = 0;
 	ok = 0;
 	while (map[y])
+	{
+		x = 0;
 		while (map[y][x])
+		{
 			if (map[y][x] != '0' && map[y][x] != '1')
 				ok = 1;
 			x++;
+		}
 		y++;
+	}	
 	if (y >= x)
 		return (0);
 	y = 0;
 	x = 0;
-	while (map[y++])
-		if (ft_strlen(map[y]) != ft_strlen(map[0]))
+	while (map[y])
+		if (ft_strlen(map[y++]) != ft_strlen(map[0]))
 			return (0);
 	return (1 * ok);
 }
@@ -44,14 +48,18 @@ static int	closed_by_walls(t_game *game)
 
 	x = 0;
 	while (game->map[0][x])
+	{
 		if (game->map[0][x] != '1' && game->map[game->max_x][x] != '1')
 			return (0);
 		x++;
+	}
 	y = 0;
 	while (game->map[y])
-		if (game->map[y][0] != '1' || game->map[y][game->max_x] != '1')
+	{
+		if (game->map[y][0] != '1' || game->map[y][game->max_y] != '1')
 			return (0);
 		y++;
+	}
 	return (1);
 }
 
