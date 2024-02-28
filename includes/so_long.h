@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:30:09 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/28 14:06:17 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/28 15:31:49 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef struct s_game
 	int			x;
 	int			exit_checker;
 	int			eat_checker;
-	bool 		exit_ok;
+	int 		exit_ok;
 	t_img		img;
 }				t_game;
 
@@ -65,5 +65,6 @@ void				free_map(char **map);
 void				init_game(t_game *game);
 void				exit_game(t_game *game);
 char				**ft_split(char const *s, char c);
+void				init_struct(t_game *g);
 
 #endif

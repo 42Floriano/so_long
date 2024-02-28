@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 16:43:15 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/28 14:25:03 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/28 15:36:58 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ static int	closed_by_walls(t_game *game)
 	x = 0;
 	while (game->map[0][x])
 	{
-		if (game->map[0][x] != '1' && game->map[game->max_x][x] != '1')
+		if (game->map[0][x] != '1' && game->map[game->max_y - 1][x] != '1')
 			return (0);
 		x++;
 	}
 	y = 0;
 	while (game->map[y])
 	{
-		if (game->map[y][0] != '1' || game->map[y][game->max_y] != '1')
+		if (game->map[y][0] != '1' || game->map[y][game->max_x -1] != '1')
 			return (0);
 		y++;
 	}
@@ -85,6 +85,7 @@ static int	is_there_epc(t_game *game)
 		}
 		game->y++;
 	}
+	printf("TestClose:\nP:%d, E:%d, EAT:%d\n", game->exit_portal, game->entry_portal, game->nb_eatable);
 	if (game->exit_portal != 1 || game->entry_portal != 1
 		|| game->nb_eatable <= 0)
 		return (0);
@@ -106,6 +107,9 @@ int	map_checkers(t_game *game, char *path)
 		|| !is_there_epc(game))
 		return (0);
 	if (!is_map_valid(game, path))
+	{
+		printf("Error\nFF not succesful\n");
 		return (0);
+	}
 	return (1);
 }

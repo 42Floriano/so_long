@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:28:35 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/28 13:21:58 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/28 15:33:48 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int ac, char **av)
 {
 	t_game	game;
 
+	init_struct(&game);
 	if (ac != 2 || av_checker(av[1]))
 	{
 		printf("Error\nInvalid Sytax");
