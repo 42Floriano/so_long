@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 16:43:15 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/28 15:36:58 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/28 15:42:07 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ static int	is_there_epc(t_game *game)
 		}
 		game->y++;
 	}
-	printf("TestClose:\nP:%d, E:%d, EAT:%d\n", game->exit_portal, game->entry_portal, game->nb_eatable);
 	if (game->exit_portal != 1 || game->entry_portal != 1
 		|| game->nb_eatable <= 0)
 		return (0);
