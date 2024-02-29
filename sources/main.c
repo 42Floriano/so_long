@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:28:35 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/28 15:33:48 by falberti         ###   ########.fr       */
+/*   Updated: 2024/02/29 19:45:01 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,28 @@ static int	av_checker(char *str)
 	return (1);
 }
 
+static void	print_struct_game(t_game *game)
+{
+	printf("Player X: %d\n", game->player_x);
+	printf("Player Y: %d\n", game->player_y);
+	printf("Player Score: %d\n", game->player_score);
+	printf("Player Moves: %d\n", game->player_moves);
+	printf("Exit Portal: %d\n", game->exit_portal);
+	printf("Entry Portal: %d\n", game->entry_portal);
+	printf("Nb Eatable: %d\n", game->nb_eatable);
+	printf("Max Y: %d\n", game->max_y);
+	printf("Max X: %d\n", game->max_x);
+	printf("Y: %d\n", game->y);
+	printf("X: %d\n", game->x);
+	printf("Exit Checker: %d\n", game->exit_checker);
+	printf("Eat Checker: %d\n", game->eat_checker);
+	printf("Exit Ok: %d\n", game->exit_ok);
+}
+
 int	main(int ac, char **av)
 {
 	t_game	game;
 
-	init_struct(&game);
 	if (ac != 2 || av_checker(av[1]))
 	{
 		printf("Error\nInvalid Sytax");
@@ -35,9 +52,12 @@ int	main(int ac, char **av)
 	}
 	else
 	{
+		init_struct(&game);
+		print_struct_game(&game);
 		game.map = readmap(av[1]);
 		if (map_checkers(&game, av[1]))
 		{
+			print_struct_game(&game);
 			init_game(&game);
 			commands(&game);
 			mlx_loop(game.mlx_ptr);
