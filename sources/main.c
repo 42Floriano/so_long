@@ -6,7 +6,7 @@
 /*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:28:35 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/29 19:45:01 by albertini        ###   ########.fr       */
+/*   Updated: 2024/02/29 22:07:02 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	main(int ac, char **av)
 		game.map = readmap(av[1]);
 		if (map_checkers(&game, av[1]))
 		{
-			print_struct_game(&game);
+			//print_struct_game(&game);
 			init_game(&game);
 			commands(&game);
 			mlx_loop(game.mlx_ptr);
