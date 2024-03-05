@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:26:24 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/05 16:17:02 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:29:30 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ static	int	move_is_possible(t_game *game, int x, int y)
 	{
 		if (game->map[y][x] == 'C')
 		{
-			printf("BOU\n");
 			game->player_score += 1;
 			game->map[y][x] = '0';
 		}
@@ -51,38 +50,34 @@ static	void	print_map(t_game *g)
 	return ;
 }
 
-int	playermove(int keycode, t_game *game)
+int	playermove(int k, t_game *g)
 {
-	if (keycode == 1
-		&& move_is_possible(game, game->player_x + 1, game->player_y))
+	if (k == 1 && move_is_possible(g, g->player_x + 1, g->player_y))
 	{
-		game->player_x += 1;
-		game->map[game->player_y][game->player_x] = 'P';
-		game->map[game->player_y][game->player_x - 1] = '0';
+		g->player_x += 1;
+		g->map[g->player_y][g->player_x] = 'P';
+		g->map[g->player_y][g->player_x - 1] = '0';
 	}
-	else if (keycode == 2
-		&& move_is_possible(game, game->player_x - 1, game->player_y))
+	else if (k == 2 && move_is_possible(g, g->player_x - 1, g->player_y))
 	{
-		game->player_x -= 1;
-		game->map[game->player_y][game->player_x] = 'P';
-		game->map[game->player_y][game->player_x + 1] = '0';
+		g->player_x -= 1;
+		g->map[g->player_y][g->player_x] = 'P';
+		g->map[g->player_y][g->player_x + 1] = '0';
 	}
-	else if (keycode == 3
-		&& move_is_possible(game, game->player_x, game->player_y - 1))
+	else if (k == 3 && move_is_possible(g, g->player_x, g->player_y - 1))
 	{
-		game->player_y -= 1;
-		game->map[game->player_y][game->player_x] = 'P';
-		game->map[game->player_y + 1][game->player_x] = '0';
+		g->player_y -= 1;
+		g->map[g->player_y][g->player_x] = 'P';
+		g->map[g->player_y + 1][g->player_x] = '0';
 	}
-	else if (keycode == 4
-		&& move_is_possible(game, game->player_x, game->player_y + 1))
+	else if (k == 4 && move_is_possible(g, g->player_x, g->player_y + 1))
 	{
-		game->player_y += 1;
-		game->map[game->player_y][game->player_x] = 'P';
-		game->map[game->player_y - 1][game->player_x] = '0';
+		g->player_y += 1;
+		g->map[g->player_y][g->player_x] = 'P';
+		g->map[g->player_y - 1][g->player_x] = '0';
 	}
-	draw_map(game);
-	print_map(game);
-	check_score(game);
+	draw_map(g);
+	print_map(g);
+	check_score(g);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:58:29 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/05 16:14:12 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:36:32 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 static void	img_init(t_game *g)
 {
 	g->img_bg = mlx_xpm_file_to_image
-		(g->mlx_ptr, "assets/onMap/0.xpm", &g->img_w, &g->img_h);
+		(g->mlx_ptr, "assets/onMap/bg3.xpm", &g->img_w, &g->img_h);
 	g->img_wall = mlx_xpm_file_to_image
-		(g->mlx_ptr, "assets/onMap/1.xpm", &g->img_w, &g->img_h);
+		(g->mlx_ptr, "assets/onMap/1-2.xpm", &g->img_w, &g->img_h);
 	g->img_pu = mlx_xpm_file_to_image
 		(g->mlx_ptr, "assets/onMap/PU.xpm", &g->img_w, &g->img_h);
 	g->img_pd = mlx_xpm_file_to_image
