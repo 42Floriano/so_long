@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:40:43 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/28 13:12:07 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:12:08 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ static int	close_cross(t_game *game)
 
 void	commands(t_game *game)
 {
-	//mlx_key_hook(data->win_ptr, change_bg, data);
 	mlx_hook(game->win_ptr, 2, 0, press_direction, game);
 	mlx_hook(game->win_ptr, 17, 0, close_cross, game);
 	mlx_hook(game->win_ptr, 3, 0, quitgame, game);

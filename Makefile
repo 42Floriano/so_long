@@ -6,7 +6,7 @@
 #    By: falberti <falberti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/18 16:30:56 by falberti          #+#    #+#              #
-#    Updated: 2024/02/28 15:22:51 by falberti         ###   ########.fr        #
+#    Updated: 2024/03/05 15:39:58 by falberti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ HEADER = $(lIBRARIES_DIR)/so_long.h
 
 FILES = $(SOURCES_DIR)/main\
 				$(SOURCES_DIR)/commands\
-				$(SOURCES_DIR)/color_screen\
 				$(SOURCES_DIR)/player_update\
 				$(SOURCES_DIR)/map_checker\
 				$(SOURCES_DIR)/read_map\
@@ -26,6 +25,7 @@ FILES = $(SOURCES_DIR)/main\
 				$(SOURCES_DIR)/exit_free_game\
 				$(SOURCES_DIR)/init_game\
 				$(SOURCES_DIR)/init_struct\
+				$(SOURCES_DIR)/draw_map\
 
 ## This is a bit tricky for me but it ask to check the end of the string in FILES than add .c if there is nothing
 ## Also possible to just liste the .c and .o files

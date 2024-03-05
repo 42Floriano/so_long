@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player_update.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
+/*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:26:24 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/29 19:54:16 by albertini        ###   ########.fr       */
+/*   Updated: 2024/03/05 16:17:02 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,6 @@ int	playermove(int keycode, t_game *game)
 		game->player_x += 1;
 		game->map[game->player_y][game->player_x] = 'P';
 		game->map[game->player_y][game->player_x - 1] = '0';
-		
-//		game->player_moves++;
 	}
 	else if (keycode == 2
 		&& move_is_possible(game, game->player_x - 1, game->player_y))
@@ -68,7 +66,6 @@ int	playermove(int keycode, t_game *game)
 		game->player_x -= 1;
 		game->map[game->player_y][game->player_x] = 'P';
 		game->map[game->player_y][game->player_x + 1] = '0';
-//		game->player_moves++;
 	}
 	else if (keycode == 3
 		&& move_is_possible(game, game->player_x, game->player_y - 1))
@@ -76,7 +73,6 @@ int	playermove(int keycode, t_game *game)
 		game->player_y -= 1;
 		game->map[game->player_y][game->player_x] = 'P';
 		game->map[game->player_y + 1][game->player_x] = '0';
-//		game->player_moves++;
 	}
 	else if (keycode == 4
 		&& move_is_possible(game, game->player_x, game->player_y + 1))
@@ -84,8 +80,8 @@ int	playermove(int keycode, t_game *game)
 		game->player_y += 1;
 		game->map[game->player_y][game->player_x] = 'P';
 		game->map[game->player_y - 1][game->player_x] = '0';
-//		game->player_moves++;
 	}
+	draw_map(game);
 	print_map(game);
 	check_score(game);
 	return (0);

@@ -6,31 +6,48 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:58:29 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/28 15:33:42 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:14:12 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	init_game(t_game *game)
+static void	img_init(t_game *g)
 {
-	game->mlx_ptr = mlx_init();
-	if (game->mlx_ptr == NULL)
+	g->img_bg = mlx_xpm_file_to_image
+		(g->mlx_ptr, "assets/onMap/0.xpm", &g->img_w, &g->img_h);
+	g->img_wall = mlx_xpm_file_to_image
+		(g->mlx_ptr, "assets/onMap/1.xpm", &g->img_w, &g->img_h);
+	g->img_pu = mlx_xpm_file_to_image
+		(g->mlx_ptr, "assets/onMap/PU.xpm", &g->img_w, &g->img_h);
+	g->img_pd = mlx_xpm_file_to_image
+		(g->mlx_ptr, "assets/onMap/PD.xpm", &g->img_w, &g->img_h);
+	g->img_c = mlx_xpm_file_to_image
+		(g->mlx_ptr, "assets/onMap/C.xpm", &g->img_w, &g->img_h);
+	g->img_exit = mlx_xpm_file_to_image
+		(g->mlx_ptr, "assets/onMap/EXITG.xpm", &g->img_w, &g->img_h);
+	return ;
+}
+
+static	void	size_window(t_game *game)
+{
+	game->map_w = (game->max_x * 32);
+	game->map_h = (game->max_y * 32);
+}
+
+void	init_game(t_game *g)
+{
+	g->mlx_ptr = mlx_init();
+	if (g->mlx_ptr == NULL)
 		return ;
-	game->win_ptr = mlx_new_window(game->mlx_ptr, 800, 800, "Hello world!");
-	game->img.img_ptr = mlx_new_image(game->mlx_ptr, 800, 800);
-	game->img.img_pixels_ptr = mlx_get_data_addr(game->img.img_ptr,
-			&game->img.bit_per_pixel,
-			&game->img.line_len,
-			&game->img.endian);
-	if (game->win_ptr == NULL)
+	size_window(g);
+	g->win_ptr = mlx_new_window(g->mlx_ptr, g->map_w, g->map_h, "So_long");
+	if (g->win_ptr == NULL)
 	{
-		mlx_destroy_window(game->mlx_ptr, game->win_ptr);
-		free(game->mlx_ptr);
+		mlx_destroy_window(g->mlx_ptr, g->win_ptr);
+		free(g->mlx_ptr);
 		return ;
 	}
-	commands(game);
-	mlx_loop(game->mlx_ptr);
-	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
-	free(game->mlx_ptr);
+	img_init(g);
+	draw_map(g);
 }

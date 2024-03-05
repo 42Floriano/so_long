@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:30:09 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/28 15:31:49 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:06:17 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,16 @@ typedef struct s_game
 	void		*mlx_ptr;
 	void		*win_ptr;
 	char		**map;
+	void		*img_bg;
+	void		*img_wall;
+	void		*img_pu;
+	void		*img_pd;
+	void		*img_c;
+	void		*img_exit;
+	int			map_w;
+	int			map_h;
+	int			img_w;
+	int			img_h;
 	int			player_x;
 	int			player_y;
 	int			player_score;
@@ -51,7 +61,7 @@ typedef struct s_game
 	int			x;
 	int			exit_checker;
 	int			eat_checker;
-	int 		exit_ok;
+	int			exit_ok;
 	t_img		img;
 }				t_game;
 
@@ -66,5 +76,6 @@ void				init_game(t_game *game);
 void				exit_game(t_game *game);
 char				**ft_split(char const *s, char c);
 void				init_struct(t_game *g);
+void				draw_map(t_game *g);
 
 #endif
