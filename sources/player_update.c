@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:26:24 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/05 16:29:30 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:55:55 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static	int	move_is_possible(t_game *game, int x, int y)
 {
-	printf("Score: %d\n", game->exit_ok);
 	if (game->exit_ok == 0 && game->map[y][x] == 'E')
 		return (0);
 	if (game->map[y][x] != '1')
@@ -27,6 +26,7 @@ static	int	move_is_possible(t_game *game, int x, int y)
 		if (game->map[y][x] == 'E' && game->exit_ok == 1)
 			exit_game(game);
 		game->player_moves++;
+		printf("Nb moves: %d\n", game->player_moves);
 		return (1);	
 	}
 	return (0);
@@ -39,16 +39,16 @@ static	void	check_score(t_game *g)
 	return ;
 }
 
-static	void	print_map(t_game *g)
-{
-	int	i;
+// static	void	print_map(t_game *g)
+// {
+// 	int	i;
 
-	i = 0;
-	printf("Map\n");
-	while (g->map[i])
-		printf("%s\n", g->map[i++]);
-	return ;
-}
+// 	i = 0;
+// 	printf("Map\n");
+// 	while (g->map[i])
+// 		printf("%s\n", g->map[i++]);
+// 	return ;
+// }
 
 int	playermove(int k, t_game *g)
 {
@@ -77,7 +77,7 @@ int	playermove(int k, t_game *g)
 		g->map[g->player_y - 1][g->player_x] = '0';
 	}
 	draw_map(g);
-	print_map(g);
+	//print_map(g);
 	check_score(g);
 	return (0);
 }
