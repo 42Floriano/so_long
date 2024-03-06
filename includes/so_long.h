@@ -6,7 +6,7 @@
 /*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:30:09 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/06 17:41:57 by albertini        ###   ########.fr       */
+/*   Updated: 2024/03/06 18:07:26 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 # include "libftmini/libft.h"
 
 // Definition of the structure
-
 typedef struct s_game
 {
 	void		*mlx_ptr;
@@ -56,17 +55,17 @@ typedef struct s_game
 	int			exit_ok;
 }				t_game;
 
-void				commands(t_game *data);
-void				color_screen(t_game *data, int color);
+// Fucntions prototypes in order of use
+void				init_struct(t_game *g);
 char				**readmap(char *filename);
-void				playermove(int keycode, t_game *vars);
+char				**ft_split(char const *s, char c);
 int					map_checkers(t_game *game, char *path);
 int					is_map_valid(t_game *game, char *path);
-void				free_map(char **map);
 int					init_game(t_game *game);
-void				exit_game(t_game *game);
-char				**ft_split(char const *s, char c);
-void				init_struct(t_game *g);
 void				draw_map(t_game *g);
+void				commands(t_game *data);
+void				playermove(int keycode, t_game *vars);
+void				exit_game(t_game *game);
+void				free_map(char **map);
 
 #endif
