@@ -6,7 +6,7 @@
 /*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:58:29 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/06 10:37:36 by albertini        ###   ########.fr       */
+/*   Updated: 2024/03/06 17:38:47 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,3 @@ int	init_game(t_game *g)
 	draw_map(g);
 	return (1);
 }
-

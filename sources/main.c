@@ -6,7 +6,7 @@
 /*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:28:35 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/06 10:55:54 by albertini        ###   ########.fr       */
+/*   Updated: 2024/03/06 17:40:07 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,3 @@ int	main(int ac, char **av)
 	exit (1);
 	return (0);
 }
-

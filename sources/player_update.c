@@ -6,7 +6,7 @@
 /*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:26:24 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/06 10:56:35 by albertini        ###   ########.fr       */
+/*   Updated: 2024/03/06 17:44:54 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,11 @@ static	void	check_score(t_game *g)
 {
 	if (g->player_score == g->nb_eatable)
 		g->exit_ok = 1;
+	draw_map(g);
 	return ;
 }
 
-int	playermove(int k, t_game *g)
+void	playermove(int k, t_game *g)
 {
 	if (k == 1 && move_is_possible(g, g->player_x + 1, g->player_y))
 	{
@@ -65,7 +66,5 @@ int	playermove(int k, t_game *g)
 		g->map[g->player_y][g->player_x] = 'P';
 		g->map[g->player_y - 1][g->player_x] = '0';
 	}
-	draw_map(g);
 	check_score(g);
-	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 13:32:44 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/23 16:27:23 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/06 17:38:11 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,3 @@ char	*ft_strdup(const char *s1)
 		return (strr);
 	return (strr);
 }
-

@@ -6,7 +6,7 @@
 /*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 12:12:06 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/06 10:52:37 by albertini        ###   ########.fr       */
+/*   Updated: 2024/03/06 17:38:04 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,3 @@ int	ft_strlen(const char *str)
 		n++;
 	return (n);
 }
-

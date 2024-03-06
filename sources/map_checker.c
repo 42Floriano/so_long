@@ -6,7 +6,7 @@
 /*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 16:43:15 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/06 10:56:10 by albertini        ###   ########.fr       */
+/*   Updated: 2024/03/06 17:39:57 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	is_rectangle_and_nempty(char **map)
 			x++;
 		}
 		y++;
-	}	
+	}
 	if (y >= x)
 		return (0);
 	y = 0;

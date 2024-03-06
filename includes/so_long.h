@@ -6,7 +6,7 @@
 /*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:30:09 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/06 10:36:23 by albertini        ###   ########.fr       */
+/*   Updated: 2024/03/06 17:41:57 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ typedef struct s_game
 void				commands(t_game *data);
 void				color_screen(t_game *data, int color);
 char				**readmap(char *filename);
-int					playermove(int keycode, t_game *vars);
+void				playermove(int keycode, t_game *vars);
 int					map_checkers(t_game *game, char *path);
 int					is_map_valid(t_game *game, char *path);
 void				free_map(char **map);
