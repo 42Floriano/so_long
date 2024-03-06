@@ -6,7 +6,7 @@
 #    By: albertini <albertini@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/18 16:30:56 by falberti          #+#    #+#              #
-#    Updated: 2024/03/06 10:30:50 by albertini        ###   ########.fr        #
+#    Updated: 2024/03/06 11:42:21 by albertini        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,10 +43,13 @@ NAME = so_long
 
 MINILIBFT = includes/libftmini/libftmini.a
 
+$(MINILIBFT):
+	$(MAKE) -C includes/libftmini
+
 
 all: $(NAME)
 
-$(NAME): $(OFILES)
+$(NAME): $(OFILES) $(MINILIBFT)
 		$(CC) $(OFILES) $(MINILIBFT) -fsanitize=address -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 ### For each .o file  it needs the .c file | $< is automatic var that takes the param and $@ the target
@@ -54,9 +57,11 @@ $(NAME): $(OFILES)
 		$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
+		$(MAKE) -C includes/libftmini clean
 		rm -f $(OFILES)
 
 fclean: clean
+		$(MAKE) -C includes/libftmini fclean
 		rm -f $(NAME)
 
 re: fclean all
