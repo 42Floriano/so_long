@@ -6,7 +6,7 @@
 /*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:30:09 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/06 09:49:43 by albertini        ###   ########.fr       */
+/*   Updated: 2024/03/06 10:36:23 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int					playermove(int keycode, t_game *vars);
 int					map_checkers(t_game *game, char *path);
 int					is_map_valid(t_game *game, char *path);
 void				free_map(char **map);
-void				init_game(t_game *game);
+int					init_game(t_game *game);
 void				exit_game(t_game *game);
 char				**ft_split(char const *s, char c);
 void				init_struct(t_game *g);

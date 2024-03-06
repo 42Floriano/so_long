@@ -6,7 +6,7 @@
 /*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:26:24 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/06 09:16:47 by albertini        ###   ########.fr       */
+/*   Updated: 2024/03/06 10:56:35 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static	int	move_is_possible(t_game *game, int x, int y)
 		if (game->map[y][x] == 'E' && game->exit_ok == 1)
 			exit_game(game);
 		game->player_moves++;
-		printf("Nb moves: %d\n", game->player_moves);
+		ft_printf("Nb moves: %d\n", game->player_moves);
 		return (1);
 	}
 	return (0);
@@ -66,7 +66,6 @@ int	playermove(int k, t_game *g)
 		g->map[g->player_y - 1][g->player_x] = '0';
 	}
 	draw_map(g);
-	//print_map(g);
 	check_score(g);
 	return (0);
 }

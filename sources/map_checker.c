@@ -6,7 +6,7 @@
 /*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 16:43:15 by falberti          #+#    #+#             */
-/*   Updated: 2024/02/29 19:40:15 by albertini        ###   ########.fr       */
+/*   Updated: 2024/03/06 10:56:10 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ int	map_checkers(t_game *game, char *path)
 		return (0);
 	if (!is_map_valid(game, path))
 	{
-		printf("Error\nFF not succesful\n");
+		ft_printf("Error\nFF not succesful\n");
 		return (0);
 	}
 	return (1);

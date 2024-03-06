@@ -1,9 +1,10 @@
 {
-	"files.associations": {
-		"so_long.h": "c",
-		"hook.h": "c",
-		"limits.h": "c",
-		"iterator": "c"
-	},
-	"C_Cpp.default.compilerPath": "/usr/bin/gcc"
+  "files.associations": {
+    "so_long.h": "c",
+    "hook.h": "c",
+    "limits.h": "c",
+    "iterator": "c",
+    "libft.h": "c"
+  },
+  "C_Cpp.default.compilerPath": "/usr/bin/gcc"
 }

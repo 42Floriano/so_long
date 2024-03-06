@@ -6,7 +6,7 @@
 /*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 16:10:49 by albertini         #+#    #+#             */
-/*   Updated: 2024/03/06 09:47:47 by albertini        ###   ########.fr       */
+/*   Updated: 2024/03/06 10:56:44 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,28 @@
 char	**readmap(char *filename)
 {
 	int		fd;
-	char	*buf;
+	char	*buff;
 	char	*line;
+	char	*line_holder;
 	char	**map;
 
 	fd = open(filename, O_RDONLY);
-	line = "";
 	if (fd < 0)
 		return (NULL);
+	line_holder = ft_strdup("");
 	while (1)
 	{
-		buf = get_next_line(fd);
-		if (buf == NULL)
+		buff = get_next_line(fd);
+		if (buff == NULL)
 			break ;
-		line = ft_strjoin(line, buf);
-		free(buf);
+		line = line_holder;
+		line_holder = ft_strjoin(line, buff);
+		free(line);
+		free(buff);
 	}
-	printf("Test:\n%s\n", line);
-	map = ft_split(line, '\n');
-	free(line);
+	ft_printf("Test:\n%s\n", line_holder);
+	map = ft_split(line_holder, '\n');
+	free(line_holder);
 	close(fd);
 	return (map);
 }

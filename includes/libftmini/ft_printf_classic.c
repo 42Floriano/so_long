@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_printf_classic.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 12:32:40 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/06 10:52:25 by albertini        ###   ########.fr       */
+/*   Created: 2023/11/02 21:09:45 by albertini         #+#    #+#             */
+/*   Updated: 2024/03/06 10:50:44 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, unsigned int l)
+int	ft_print_char(char c)
 {
-	unsigned char	*t;
+	return (write(1, &c, 1));
+}
 
-	t = str;
-	while (l > 0)
+int	ft_print_str(char *str)
+{
+	int	count;
+	int	i;
+
+	count = 0;
+	i = 0;
+	if (str)
 	{
-		*t = c;
-		t++;
-		l--;
+		while (str[i])
+		{
+			count += ft_print_char(str[count]);
+			i++;
+		}
 	}
-	return (str);
+	else
+	{
+		count += ft_print_str("(null)");
+	}
+	return (count);
 }

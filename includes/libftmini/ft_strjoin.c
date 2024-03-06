@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:58:37 by falberti          #+#    #+#             */
-/*   Updated: 2023/10/18 13:42:41 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/06 10:52:32 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	new[i] = '\0';
 	return (new);
 }
-/*
-int main (void)
-{
-	char str1[10] = "bi[] ";
-	char str2[10] = "Oooops !";
-
-	printf("T: %s", ft_strjoin(str1, str2));
-	return (0);
-}
-*/

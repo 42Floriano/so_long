@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: falberti <falberti@student.42.fr>          +#+  +:+       +#+         #
+#    By: albertini <albertini@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/18 16:30:56 by falberti          #+#    #+#              #
-#    Updated: 2024/03/05 15:39:58 by falberti         ###   ########.fr        #
+#    Updated: 2024/03/06 10:30:50 by albertini        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ MINILIBFT = includes/libftmini/libftmini.a
 all: $(NAME)
 
 $(NAME): $(OFILES)
-		$(CC) $(OFILES) $(MINILIBFT) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+		$(CC) $(OFILES) $(MINILIBFT) -fsanitize=address -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 ### For each .o file  it needs the .c file | $< is automatic var that takes the param and $@ the target
 %.o: %.c

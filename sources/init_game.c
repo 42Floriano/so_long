@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:58:29 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/05 16:36:32 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/06 10:37:36 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,21 @@ static	void	size_window(t_game *game)
 	game->map_h = (game->max_y * 32);
 }
 
-void	init_game(t_game *g)
+int	init_game(t_game *g)
 {
 	g->mlx_ptr = mlx_init();
 	if (g->mlx_ptr == NULL)
-		return ;
+		return (0);
 	size_window(g);
 	g->win_ptr = mlx_new_window(g->mlx_ptr, g->map_w, g->map_h, "So_long");
 	if (g->win_ptr == NULL)
 	{
 		mlx_destroy_window(g->mlx_ptr, g->win_ptr);
 		free(g->mlx_ptr);
-		return ;
+		return (0);
 	}
 	img_init(g);
 	draw_map(g);
+	return (1);
 }
+

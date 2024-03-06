@@ -6,7 +6,7 @@
 /*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:40:43 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/06 09:26:57 by albertini        ###   ########.fr       */
+/*   Updated: 2024/03/06 10:55:10 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	quitgame(int keycode, t_game *game)
 {
 	if (keycode == KEYCODE_ESC)
 	{
-		printf("The %d key (ESC) has been pressed\n", keycode);
+		ft_printf("The %d key (ESC) has been pressed\n", keycode);
 		exit_game(game);
 	}
 	return (1);

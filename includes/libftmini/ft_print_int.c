@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_print_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 12:32:40 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/06 10:52:25 by albertini        ###   ########.fr       */
+/*   Created: 2023/11/02 21:14:29 by albertini         #+#    #+#             */
+/*   Updated: 2024/03/06 10:50:28 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, unsigned int l)
+int	ft_print_int(long nb)
 {
-	unsigned char	*t;
+	int	count;
 
-	t = str;
-	while (l > 0)
+	count = 0;
+	if (nb == -2147483648)
 	{
-		*t = c;
-		t++;
-		l--;
+		count = write(1, "-2147483648", 11);
+		return (count);
 	}
-	return (str);
+	if (nb < 0)
+	{
+		count += ft_print_char('-');
+		count += ft_print_int(nb * -1);
+	}
+	else if (nb > 9)
+	{
+		count += ft_print_int(nb / 10);
+		count += ft_print_int(nb % 10);
+	}
+	else if (nb < 10)
+		count += ft_print_char(nb + 48);
+	return (count);
 }

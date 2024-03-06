@@ -5,6 +5,9 @@ FILES = ft_split\
             get_next_line\
             get_next_line_utils\
 			ft_memset\
+			ft_print_int\
+			ft_printf_classic\
+			ft_printf\
 
 			
 CFILES = $(FILES:%=%.c)

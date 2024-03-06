@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 12:12:06 by falberti          #+#    #+#             */
-/*   Updated: 2023/10/10 14:54:51 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/06 10:52:37 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,3 @@ int	ft_strlen(const char *str)
 	return (n);
 }
 
-/*int	main(void)
-{
-	printf("Result is %d", ft_strlen("Ishhhh"));
-	return (0);
-}*/
