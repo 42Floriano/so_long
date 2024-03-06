@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player_update.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:26:24 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/05 16:55:55 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/06 09:16:47 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static	int	move_is_possible(t_game *game, int x, int y)
 			exit_game(game);
 		game->player_moves++;
 		printf("Nb moves: %d\n", game->player_moves);
-		return (1);	
+		return (1);
 	}
 	return (0);
 }
@@ -38,17 +38,6 @@ static	void	check_score(t_game *g)
 		g->exit_ok = 1;
 	return ;
 }
-
-// static	void	print_map(t_game *g)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	printf("Map\n");
-// 	while (g->map[i])
-// 		printf("%s\n", g->map[i++]);
-// 	return ;
-// }
 
 int	playermove(int k, t_game *g)
 {

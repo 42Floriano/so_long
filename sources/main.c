@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:28:35 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/05 14:57:42 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/06 10:09:40 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ int	main(int ac, char **av)
 	t_game	game;
 
 	if (ac != 2 || av_checker(av[1]))
-	{
 		printf("Error\nInvalid Sytax");
-		exit(1);
-	}
 	else
 	{
 		init_struct(&game);
@@ -41,16 +38,15 @@ int	main(int ac, char **av)
 			init_game(&game);
 			commands(&game);
 			mlx_loop(game.mlx_ptr);
-			mlx_destroy_window(game.mlx_ptr, game.win_ptr);
-			free(game.mlx_ptr);
 		}
 		else
 		{
 			if (game.map)
 				free_map(game.map);
-			printf("Error\nMap nValid");
-			exit(1);
+			printf("Error\nMap nValid\n");
 		}
 	}
+	exit (1);
 	return (0);
 }
+

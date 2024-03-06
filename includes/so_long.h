@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:30:09 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/05 16:45:06 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/06 09:49:43 by albertini        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,6 @@
 # include "libftmini/libft.h"
 
 // Definition of the structure
-typedef struct s_img
-{
-	void	*img_ptr;
-	char	*img_pixels_ptr;
-	int		bit_per_pixel;
-	int		endian;
-	int		line_len;
-}				t_img;
 
 typedef struct s_game
 {
@@ -62,7 +54,6 @@ typedef struct s_game
 	int			exit_checker;
 	int			eat_checker;
 	int			exit_ok;
-	t_img		img;
 }				t_game;
 
 void				commands(t_game *data);
