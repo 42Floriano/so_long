@@ -6,7 +6,7 @@
 #    By: falberti <falberti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/18 16:30:56 by falberti          #+#    #+#              #
-#    Updated: 2024/03/12 13:51:16 by falberti         ###   ########.fr        #
+#    Updated: 2024/03/12 13:52:54 by falberti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,8 +92,8 @@ $(BNAME): $(BOFILES) $(MINILIBFT)
 		$(CC) $(BOFILES) $(MINILIBFT) -fsanitize=address -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(BNAME)
 bclean:
 		$(MAKE) -C includes/libftmini clean
-		rm -f $(OBFILES)
-bfclean: clean
+		rm -f $(BOFILES)
+bfclean: bclean
 		$(MAKE) -C includes/libftmini fclean
 		rm -f $(BNAME)
 bre: bfclean bonus
