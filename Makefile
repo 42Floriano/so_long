@@ -6,7 +6,7 @@
 #    By: falberti <falberti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/18 16:30:56 by falberti          #+#    #+#              #
-#    Updated: 2024/03/12 14:05:45 by falberti         ###   ########.fr        #
+#    Updated: 2024/03/12 16:05:47 by falberti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,18 +63,18 @@ BNAME = so_long_bonus
 
 MINILIBFT = includes/libftmini/libftmini.a
 
+##all: FLAGS = $(CFLAGS)
+all: $(NAME)
+
 $(MINILIBFT):
 	$(MAKE) -C includes/libftmini
-
-all: FLAGS = $(CFLAGS)
-all: $(NAME)
 
 $(NAME): $(OFILES) $(MINILIBFT)
 		$(CC) $(OFILES) $(MINILIBFT) -fsanitize=address -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 ### For each .o file  it needs the .c file | $< is automatic var that takes the param and $@ the target
-%.o: %.c
-		$(CC) $(FLAGS) -c $< -o $@
+$(FILES).o: $(FILES).c
+		$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 		$(MAKE) -C includes/libftmini clean
@@ -86,11 +86,14 @@ fclean: clean
 
 re: fclean all
 
-bonus: FLAGS = $(BCFLAGS)
+##bonus: FLAGS = $(BCFLAGS)
 bonus: $(BNAME)
 
 $(BNAME): $(BOFILES) $(MINILIBFT)
 		$(CC) $(BOFILES) $(MINILIBFT) -fsanitize=address -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(BNAME)
+
+$(BFILES).o: $(BFILES).c
+		$(CC) $(BFLAGS) -c $< -o $@
 bclean:
 		$(MAKE) -C includes/libftmini clean
 		rm -f $(BOFILES)
