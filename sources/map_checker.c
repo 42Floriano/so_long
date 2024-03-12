@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
+/*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 16:43:15 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/06 17:39:57 by albertini        ###   ########.fr       */
+/*   Updated: 2024/03/12 12:31:12 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,28 @@ static int	is_there_epc(t_game *game)
 	return (1);
 }
 
+//check unknow char on the map
+static int	unknown_char(char **map)
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while (map[y])
+	{
+		x = 0;
+		while (map[y][x])
+		{
+			if (map[y][x] != '1' && map[y][x] != '0' && map[y][x] != 'E'
+			&& map[y][x] != 'P' && map[y][x] != 'C')
+				return (0);
+			x++;
+		}
+		y++;
+	}
+	return (1);
+}
+
 // must be changed with game instead
 int	map_checkers(t_game *game, char *path)
 {
@@ -103,11 +125,15 @@ int	map_checkers(t_game *game, char *path)
 	game->max_x = ft_strlen(game->map[0]);
 	if (!is_rectangle_and_nempty(game->map)
 		|| !closed_by_walls(game)
-		|| !is_there_epc(game))
+		|| !is_there_epc(game)
+		|| !unknown_char(game->map))
+	{
+		ft_printf("Error\nMap is not valid\n");
 		return (0);
+	}
 	if (!is_map_valid(game, path))
 	{
-		ft_printf("Error\nFF not succesful\n");
+		ft_printf("Error\nFloodFill not succesful\n");
 		return (0);
 	}
 	return (1);
