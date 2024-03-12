@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:30:09 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/12 13:14:25 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/12 14:18:23 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_game
 	void		*img_pd;
 	void		*img_c;
 	void		*img_exit;
+	void		*img_enemy;
 	int			map_w;
 	int			map_h;
 	int			img_w;
@@ -65,5 +66,6 @@ void				commands(t_game *data);
 void				playermove(int keycode, t_game *vars);
 void				exit_game(t_game *game);
 void				free_map(char **map);
+void				draw_score(t_game *g);
 
 #endif

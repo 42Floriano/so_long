@@ -6,7 +6,7 @@
 #    By: falberti <falberti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/18 16:30:56 by falberti          #+#    #+#              #
-#    Updated: 2024/03/12 13:52:54 by falberti         ###   ########.fr        #
+#    Updated: 2024/03/12 14:05:45 by falberti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ BFILES = $(SOURCES_BDIR)/main_bonus\
 				$(SOURCES_BDIR)/init_game_bonus\
 				$(SOURCES_BDIR)/init_struct_bonus\
 				$(SOURCES_BDIR)/draw_map_bonus\
+				$(SOURCES_BDIR)/draw_score_bonus\
 ## This is a bit tricky for me but it ask to check the end of the string in FILES than add .c if there is nothing
 ## Also possible to just liste the .c and .o files
 CFILES = $(addsuffix .c, $(FILES))

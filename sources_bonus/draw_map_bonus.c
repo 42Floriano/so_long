@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:36:29 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/12 13:15:03 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/12 14:26:38 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,14 @@ void	draw_map(t_game *g)
 				draw_img(g, g->img_pu, x, y);
 			if (g->map[y][x] == 'C')
 				draw_img(g, g->img_c, x, y);
+			if (g->map[y][x] == 'K')
+				draw_img(g, g->img_enemy, x, y);
 			if (g->map[y][x] == 'E')
 				draw_exit(g, x, y);
 			x++;
 		}
 		y++;
 	}
+	draw_score(g);
 	return ;
 }

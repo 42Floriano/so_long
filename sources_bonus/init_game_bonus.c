@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:58:29 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/12 13:15:10 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/12 14:19:09 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static void	img_init(t_game *g)
 		(g->mlx_ptr, "assets/onMap/C.xpm", &g->img_w, &g->img_h);
 	g->img_exit = mlx_xpm_file_to_image
 		(g->mlx_ptr, "assets/onMap/EXITG.xpm", &g->img_w, &g->img_h);
+	g->img_enemy = mlx_xpm_file_to_image
+		(g->mlx_ptr, "assets/onMap/ENEMY.xpm", &g->img_w, &g->img_h);
 	return ;
 }
 

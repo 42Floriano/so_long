@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albertini <albertini@student.42.fr>        +#+  +:+       +#+        */
+/*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 10:38:32 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/06 10:51:39 by albertini        ###   ########.fr       */
+/*   Updated: 2024/03/12 14:00:09 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int			ft_strlen(const char *str);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		**ft_split(char const *s, char c);
 void		*ft_memset(void *str, int c, unsigned int l);
+char		*ft_itoa(int n);
 
 int			ft_print_char(char c);
 int			ft_print_str(char *str);

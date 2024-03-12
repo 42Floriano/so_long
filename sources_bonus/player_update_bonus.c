@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:26:24 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/12 13:15:27 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/12 13:56:03 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ static	int	move_is_possible(t_game *game, int x, int y)
 		if (game->map[y][x] == 'E' && game->exit_ok == 1)
 			exit_game(game);
 		game->player_moves++;
-		ft_printf("Nb moves: %d\n", game->player_moves);
 		return (1);
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 16:43:15 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/12 13:15:20 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/12 14:21:56 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ static int	unknown_char(char **map)
 		while (map[y][x])
 		{
 			if (map[y][x] != '1' && map[y][x] != '0' && map[y][x] != 'E'
-			&& map[y][x] != 'P' && map[y][x] != 'C')
+			&& map[y][x] != 'P' && map[y][x] != 'C' && map[y][x] != 'K')
 				return (0);
 			x++;
 		}

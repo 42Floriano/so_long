@@ -8,6 +8,7 @@ FILES = ft_split\
 			ft_print_int\
 			ft_printf_classic\
 			ft_printf\
+			ft_itoa\
 
 			
 CFILES = $(FILES:%=%.c)
