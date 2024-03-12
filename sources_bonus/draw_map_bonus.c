@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:36:29 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/12 14:26:38 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/12 14:56:00 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,21 @@ static void	draw_exit(t_game *g, int x, int y)
 	draw_img(g, g->img_exit, x, y);
 }
 
+static void	draw_elements(t_game *g, char c, int x, int y)
+{
+	if (c == '1')
+		draw_img(g, g->img_wall, x, y);
+	if (c == 'P')
+		draw_img(g, g->img_pu, x, y);
+	if (c == 'C')
+		draw_img(g, g->img_c, x, y);
+	if (c == 'K')
+		draw_img(g, g->img_enemy, x, y);
+	if (c == 'E')
+		draw_exit(g, x, y);
+	return ;
+}
+
 void	draw_map(t_game *g)
 {
 	int	x;
@@ -60,16 +75,7 @@ void	draw_map(t_game *g)
 		x = 0;
 		while (g->map[y][x])
 		{
-			if (g->map[y][x] == '1')
-				draw_img(g, g->img_wall, x, y);
-			if (g->map[y][x] == 'P')
-				draw_img(g, g->img_pu, x, y);
-			if (g->map[y][x] == 'C')
-				draw_img(g, g->img_c, x, y);
-			if (g->map[y][x] == 'K')
-				draw_img(g, g->img_enemy, x, y);
-			if (g->map[y][x] == 'E')
-				draw_exit(g, x, y);
+			draw_elements(g, g->map[y][x], x, y);
 			x++;
 		}
 		y++;

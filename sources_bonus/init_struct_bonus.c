@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:21:33 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/12 14:21:25 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/12 14:57:55 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	init_struct(t_game *g)
 	g->img_bg = NULL;
 	g->img_wall = NULL;
 	g->img_pu = NULL;
-	g->img_pd = NULL;
 	g->img_c = NULL;
 	g->img_exit = NULL;
 	g->img_enemy = NULL;

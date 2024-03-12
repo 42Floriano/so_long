@@ -6,7 +6,7 @@
 /*   By: falberti <falberti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:26:24 by falberti          #+#    #+#             */
-/*   Updated: 2024/03/12 13:56:03 by falberti         ###   ########.fr       */
+/*   Updated: 2024/03/12 15:20:28 by falberti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ static	int	move_is_possible(t_game *game, int x, int y)
 		}
 		if (game->map[y][x] == 'E' && game->exit_ok == 1)
 			exit_game(game);
+		if (game->map[y][x] == 'K')
+		{
+			ft_printf("GAME OVER !!\n ... noob");
+			exit_game(game);
+		}	
 		game->player_moves++;
 		return (1);
 	}
